@@ -48,4 +48,45 @@ xlabel('Frecuencia [Hz]')
 ylabel('Corriente [mA]')
 legend('Punta 1','Punta 2','Punta 3')
 
+[datos1 delimitador1] = importdata('NewFile0.csv');
+M1_tiempo=datos1.data(:,1);
+M1_Canal_2=datos1.data(:,2);
+M1_Canal_3=datos1.data(:,3);
+M1_Canal_4=datos1.data(:,4);
+figure(2)
+hold on
+plot(M1_tiempo,M1_Canal_2,'r','linewidth',2);
+plot(M1_tiempo,M1_Canal_3,'b','linewidth',2);
+plot(M1_tiempo,M1_Canal_4,'g','linewidth',2);
+xlabel('tiempo [s]')
+ylabel('Corriente [mA]')
+legend('Punta 1','Punta 2','Punta 3')
+
+
+[datos2 delimitador2] = importdata('NewFile1.csv');
+M2_tiempo=datos2.data(:,1);
+M2_Canal_2=datos2.data(:,2);
+M2_Canal_3=datos2.data(:,3);
+figure(3)
+hold on
+plot(M2_tiempo,M2_Canal_2,'r','linewidth',2);
+plot(M2_tiempo,80*M2_Canal_3,'b','linewidth',2);
+xlabel('tiempo [s]')
+ylabel('Tensión [V]')
+legend('Punta de tensión','80*Punta de corriente')
+
+[datos3 delimitador1] = importdata('NewFile2.csv');
+M3_tiempo=datos3.data(:,1);
+M3_Canal_2=datos3.data(:,2);
+M3_Canal_3=datos3.data(:,3);
+M3_Canal_4=datos3.data(:,4);
+figure(4)
+hold on
+plot(M3_tiempo,M3_Canal_2,'r','linewidth',2);
+plot(M3_tiempo,M3_Canal_3,'b','linewidth',2);
+plot(M3_tiempo,M3_Canal_4,'g','linewidth',2);
+xlabel('tiempo [s]')
+ylabel('Tensión [V]')
+legend('Punta tensión','Punta 1','Punta 2')
+
 
